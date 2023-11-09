@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebSocket!</title>
+    <script>
+      const wsc = new WebSocket('wss://localhost:5000');
+      wsc.onopen = () => {
+        wsc.send('Hello from client');
+      };
+      wsc.onmessage = (message) => console.log(message.data);
+    </script>
+  </head>
+  <body>
+    <h1>WebSocket Page</h1>
+  </body>
+</html>
